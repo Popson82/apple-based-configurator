@@ -1,28 +1,31 @@
 [
     {
-        "name": "Laptop 15\"",
-        "description": "Ultra cienki, wydajny laptop z ekranem o wysokiej rozdzielczości.",
-        "price": 3999,
-        "image": "http://localhost:3000/laptop.jpg",
+        "id": 1,
+        "name": "MacBook",
+        "description": "Projektując MacBooka, postanowiliśmy dokonać niemożliwego: zmieścić wszystko, co oferuje pełnowymiarowy Mac, w najlżejszym i najbardziej kompaktowym z naszych notebooków. A teraz jest nie tylko smukły, ale i potężniejszy niż kiedykolwiek. Nowe procesory Intel Core m3, i5 i i7 siódmej generacji1 zwiększają jego szybkość do 20 procent, a pamięć masowa SSD dotrzymuje im kroku: działa nawet o 50 procent sprawniej2 niż w poprzednim modelu.",
+        "priceFrom": 6499,
+        "image": "http://localhost:5000/macbook.png",
+        "new": false,
+        "chosen": false,
         "features": [
             {
                 "code": "processor",
                 "name": "Procesor",
                 "options": [
                     {
-                        "code": "i7-25",
-                        "name": "i7 2.5 GHz",
+                        "code": "m3-12",
+                        "name": "Intel Core m3 1,2GHz 7 generacji",
                         "price": 0
                     },
                     {
-                        "code": "i7-28",
-                        "name": "i7 2.8 GHz",
-                        "price": 400
+                        "code": "i5-13",
+                        "name": "Intel Core i5 1,3GHz 7 generacji",
+                        "price": 480
                     },
                     {
-                        "code": "i7-32",
-                        "name": "i7 3.2 GHz",
-                        "price": 800
+                        "code": "i7-14",
+                        "name": "Intel Core i7 1,4GHz 7 generacji",
+                        "price": 1200
                     }
                 ]
             },
@@ -38,7 +41,67 @@
                     {
                         "code": "ram-16",
                         "name": "16GB RAM",
-                        "price": 350
+                        "price": 960
+                    }
+                ]
+            },
+            {
+                "code": "drive",
+                "name": "Dysk twardy",
+                "options": [
+                    {
+                        "code": "ssd-256",
+                        "name": "256GB SSD",
+                        "price": 0
+                    }
+                ]
+            },
+            {
+                "code": "Screen",
+                "name": "Ekran",
+                "options": [
+                    {
+                        "code": "retina-12-led",
+                        "name": "Retina 12\" LED",
+                        "price": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "13\" calowy MackBook Air",
+        "description": "Najpopular­niejszy Mac kolejny raz zawróci Ci w głowie. Dostępny w kolorze srebrnym, gwiezdnej szarości i złotym, nowy MacBook Air jest smuklejszy, lżejszy i ma olśniewający wyświetlacz Retina, Touch ID, klawiaturę najnowszej generacji oraz gładzik Force Touch. Jego legendarna konstrukcja w kształcie klina jest wykonana z aluminium pochodzącego w 100 procentach z recyklingu, co czyni go najbardziej ekologicznym ze wszystkich Maców1. A dzięki wydajnej baterii może pracować cały dzień bez doładowywania. Krótko mówiąc, MacBook Air to doskonały ultraprzenośny notebook do wszystkiego.",
+        "priceFrom": 4799,
+        "image": "http://localhost:5000/macbook-air.png",
+        "new": false,
+        "chosen": false,
+        "features": [
+            {
+                "code": "processor",
+                "name": "Procesor",
+                "options": [
+                    {
+                        "code": "i5-18",
+                        "name": "i5 1.8 GHz",
+                        "price": 0
+                    },
+                    {
+                        "code": "i7-22",
+                        "name": "i7 2.2 GHz",
+                        "price": 720
+                    }
+                ]
+            },
+            {
+                "code": "memory",
+                "name": "Pamięć RAM",
+                "options": [
+                    {
+                        "code": "ram-8",
+                        "name": "8GB RAM",
+                        "price": 0
                     }
                 ]
             },
@@ -54,12 +117,547 @@
                     {
                         "code": "ssd-256",
                         "name": "256GB SSD",
-                        "price": 300
+                        "price": 1000
                     },
                     {
                         "code": "ssd-512",
                         "name": "512GB SSD",
-                        "price": 600
+                        "price": 2000
+                    }
+                ]
+            },
+            {
+                "code": "Screen",
+                "name": "Ekran",
+                "options": [
+                    {
+                        "code": "widescreen-13-led",
+                        "name": "Panoramiczny 13,3\" LED",
+                        "price": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "13\" calowy MackBook Air",
+        "description": "Najpopular­niejszy Mac kolejny raz zawróci Ci w głowie. Dostępny w kolorze srebrnym, gwiezdnej szarości i złotym, nowy MacBook Air jest smuklejszy, lżejszy i ma olśniewający wyświetlacz Retina, Touch ID, klawiaturę najnowszej generacji oraz gładzik Force Touch. Jego legendarna konstrukcja w kształcie klina jest wykonana z aluminium pochodzącego w 100 procentach z recyklingu, co czyni go najbardziej ekologicznym ze wszystkich Maców1. A dzięki wydajnej baterii może pracować cały dzień bez doładowywania. Krótko mówiąc, MacBook Air to doskonały ultraprzenośny notebook do wszystkiego.",
+        "priceFrom": 5999,
+        "image": "http://localhost:5000/macbook-air-retina.png",
+        "new": true,
+        "chosen": false,
+        "features": [
+            {
+                "code": "processor",
+                "name": "Procesor",
+                "options": [
+                    {
+                        "code": "i5-16",
+                        "name": "i5 1.6 GHz 8 generacji",
+                        "price": 0
+                    }
+                ]
+            },
+            {
+                "code": "memory",
+                "name": "Pamięć RAM",
+                "options": [
+                    {
+                        "code": "ram-8",
+                        "name": "8GB RAM",
+                        "price": 0
+                    },
+                    {
+                        "code": "ram-16",
+                        "name": "16GB RAM",
+                        "price": 960
+                    }
+                ]
+            },
+            {
+                "code": "drive",
+                "name": "Dysk twardy",
+                "options": [
+                    {
+                        "code": "ssd-128",
+                        "name": "128GB SSD",
+                        "price": 0
+                    },
+                    {
+                        "code": "ssd-256",
+                        "name": "256GB SSD",
+                        "price": 1000
+                    },
+                    {
+                        "code": "ssd-512",
+                        "name": "512GB SSD",
+                        "price": 2000
+                    },
+                    {
+                        "code": "ssd-1500",
+                        "name": "1,5TB SSD",
+                        "price": 6000
+                    }
+                ]
+            },
+            {
+                "code": "Screen",
+                "name": "Ekran",
+                "options": [
+                    {
+                        "code": "retina-13",
+                        "name": "Retina 13\"",
+                        "price": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "13\" calowy MackBook Air",
+        "description": "Najpopular­niejszy Mac kolejny raz zawróci Ci w głowie. Dostępny w kolorze srebrnym, gwiezdnej szarości i złotym, nowy MacBook Air jest smuklejszy, lżejszy i ma olśniewający wyświetlacz Retina, Touch ID, klawiaturę najnowszej generacji oraz gładzik Force Touch. Jego legendarna konstrukcja w kształcie klina jest wykonana z aluminium pochodzącego w 100 procentach z recyklingu, co czyni go najbardziej ekologicznym ze wszystkich Maców1. A dzięki wydajnej baterii może pracować cały dzień bez doładowywania. Krótko mówiąc, MacBook Air to doskonały ultraprzenośny notebook do wszystkiego.",
+        "priceFrom": 5999,
+        "image": "http://localhost:5000/macbook-air-retina.png",
+        "new": true,
+        "chosen": false,
+        "features": [
+            {
+                "code": "processor",
+                "name": "Procesor",
+                "options": [
+                    {
+                        "code": "i5-16",
+                        "name": "i5 1.6 GHz 8 generacji",
+                        "price": 0
+                    }
+                ]
+            },
+            {
+                "code": "memory",
+                "name": "Pamięć RAM",
+                "options": [
+                    {
+                        "code": "ram-8",
+                        "name": "8GB RAM",
+                        "price": 0
+                    },
+                    {
+                        "code": "ram-16",
+                        "name": "16GB RAM",
+                        "price": 960
+                    }
+                ]
+            },
+            {
+                "code": "drive",
+                "name": "Dysk twardy",
+                "options": [
+                    {
+                        "code": "ssd-128",
+                        "name": "128GB SSD",
+                        "price": 0
+                    },
+                    {
+                        "code": "ssd-256",
+                        "name": "256GB SSD",
+                        "price": 1000
+                    },
+                    {
+                        "code": "ssd-512",
+                        "name": "512GB SSD",
+                        "price": 2000
+                    },
+                    {
+                        "code": "ssd-1500",
+                        "name": "1,5TB SSD",
+                        "price": 6000
+                    }
+                ]
+            },
+            {
+                "code": "Screen",
+                "name": "Ekran",
+                "options": [
+                    {
+                        "code": "retina-13",
+                        "name": "Retina 13\"",
+                        "price": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "13\" calowy MackBook Air",
+        "description": "Najpopular­niejszy Mac kolejny raz zawróci Ci w głowie. Dostępny w kolorze srebrnym, gwiezdnej szarości i złotym, nowy MacBook Air jest smuklejszy, lżejszy i ma olśniewający wyświetlacz Retina, Touch ID, klawiaturę najnowszej generacji oraz gładzik Force Touch. Jego legendarna konstrukcja w kształcie klina jest wykonana z aluminium pochodzącego w 100 procentach z recyklingu, co czyni go najbardziej ekologicznym ze wszystkich Maców1. A dzięki wydajnej baterii może pracować cały dzień bez doładowywania. Krótko mówiąc, MacBook Air to doskonały ultraprzenośny notebook do wszystkiego.",
+        "priceFrom": 5999,
+        "image": "http://localhost:5000/macbook-air-retina.png",
+        "new": true,
+        "chosen": false,
+        "features": [
+            {
+                "code": "processor",
+                "name": "Procesor",
+                "options": [
+                    {
+                        "code": "i5-16",
+                        "name": "i5 1.6 GHz 8 generacji",
+                        "price": 0
+                    }
+                ]
+            },
+            {
+                "code": "memory",
+                "name": "Pamięć RAM",
+                "options": [
+                    {
+                        "code": "ram-8",
+                        "name": "8GB RAM",
+                        "price": 0
+                    },
+                    {
+                        "code": "ram-16",
+                        "name": "16GB RAM",
+                        "price": 960
+                    }
+                ]
+            },
+            {
+                "code": "drive",
+                "name": "Dysk twardy",
+                "options": [
+                    {
+                        "code": "ssd-128",
+                        "name": "128GB SSD",
+                        "price": 0
+                    },
+                    {
+                        "code": "ssd-256",
+                        "name": "256GB SSD",
+                        "price": 1000
+                    },
+                    {
+                        "code": "ssd-512",
+                        "name": "512GB SSD",
+                        "price": 2000
+                    },
+                    {
+                        "code": "ssd-1500",
+                        "name": "1,5TB SSD",
+                        "price": 6000
+                    }
+                ]
+            },
+            {
+                "code": "Screen",
+                "name": "Ekran",
+                "options": [
+                    {
+                        "code": "retina-13",
+                        "name": "Retina 13\"",
+                        "price": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "13\" calowy MackBook Air",
+        "description": "Najpopular­niejszy Mac kolejny raz zawróci Ci w głowie. Dostępny w kolorze srebrnym, gwiezdnej szarości i złotym, nowy MacBook Air jest smuklejszy, lżejszy i ma olśniewający wyświetlacz Retina, Touch ID, klawiaturę najnowszej generacji oraz gładzik Force Touch. Jego legendarna konstrukcja w kształcie klina jest wykonana z aluminium pochodzącego w 100 procentach z recyklingu, co czyni go najbardziej ekologicznym ze wszystkich Maców1. A dzięki wydajnej baterii może pracować cały dzień bez doładowywania. Krótko mówiąc, MacBook Air to doskonały ultraprzenośny notebook do wszystkiego.",
+        "priceFrom": 5999,
+        "image": "http://localhost:5000/macbook-air-retina.png",
+        "new": true,
+        "chosen": false,
+        "features": [
+            {
+                "code": "processor",
+                "name": "Procesor",
+                "options": [
+                    {
+                        "code": "i5-16",
+                        "name": "i5 1.6 GHz 8 generacji",
+                        "price": 0
+                    }
+                ]
+            },
+            {
+                "code": "memory",
+                "name": "Pamięć RAM",
+                "options": [
+                    {
+                        "code": "ram-8",
+                        "name": "8GB RAM",
+                        "price": 0
+                    },
+                    {
+                        "code": "ram-16",
+                        "name": "16GB RAM",
+                        "price": 960
+                    }
+                ]
+            },
+            {
+                "code": "drive",
+                "name": "Dysk twardy",
+                "options": [
+                    {
+                        "code": "ssd-128",
+                        "name": "128GB SSD",
+                        "price": 0
+                    },
+                    {
+                        "code": "ssd-256",
+                        "name": "256GB SSD",
+                        "price": 1000
+                    },
+                    {
+                        "code": "ssd-512",
+                        "name": "512GB SSD",
+                        "price": 2000
+                    },
+                    {
+                        "code": "ssd-1500",
+                        "name": "1,5TB SSD",
+                        "price": 6000
+                    }
+                ]
+            },
+            {
+                "code": "Screen",
+                "name": "Ekran",
+                "options": [
+                    {
+                        "code": "retina-13",
+                        "name": "Retina 13\"",
+                        "price": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "13\" calowy MackBook Air",
+        "description": "Najpopular­niejszy Mac kolejny raz zawróci Ci w głowie. Dostępny w kolorze srebrnym, gwiezdnej szarości i złotym, nowy MacBook Air jest smuklejszy, lżejszy i ma olśniewający wyświetlacz Retina, Touch ID, klawiaturę najnowszej generacji oraz gładzik Force Touch. Jego legendarna konstrukcja w kształcie klina jest wykonana z aluminium pochodzącego w 100 procentach z recyklingu, co czyni go najbardziej ekologicznym ze wszystkich Maców1. A dzięki wydajnej baterii może pracować cały dzień bez doładowywania. Krótko mówiąc, MacBook Air to doskonały ultraprzenośny notebook do wszystkiego.",
+        "priceFrom": 5999,
+        "image": "http://localhost:5000/macbook-air-retina.png",
+        "new": true,
+        "chosen": false,
+        "features": [
+            {
+                "code": "processor",
+                "name": "Procesor",
+                "options": [
+                    {
+                        "code": "i5-16",
+                        "name": "i5 1.6 GHz 8 generacji",
+                        "price": 0
+                    }
+                ]
+            },
+            {
+                "code": "memory",
+                "name": "Pamięć RAM",
+                "options": [
+                    {
+                        "code": "ram-8",
+                        "name": "8GB RAM",
+                        "price": 0
+                    },
+                    {
+                        "code": "ram-16",
+                        "name": "16GB RAM",
+                        "price": 960
+                    }
+                ]
+            },
+            {
+                "code": "drive",
+                "name": "Dysk twardy",
+                "options": [
+                    {
+                        "code": "ssd-128",
+                        "name": "128GB SSD",
+                        "price": 0
+                    },
+                    {
+                        "code": "ssd-256",
+                        "name": "256GB SSD",
+                        "price": 1000
+                    },
+                    {
+                        "code": "ssd-512",
+                        "name": "512GB SSD",
+                        "price": 2000
+                    },
+                    {
+                        "code": "ssd-1500",
+                        "name": "1,5TB SSD",
+                        "price": 6000
+                    }
+                ]
+            },
+            {
+                "code": "Screen",
+                "name": "Ekran",
+                "options": [
+                    {
+                        "code": "retina-13",
+                        "name": "Retina 13\"",
+                        "price": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "13\" calowy MackBook Air",
+        "description": "Najpopular­niejszy Mac kolejny raz zawróci Ci w głowie. Dostępny w kolorze srebrnym, gwiezdnej szarości i złotym, nowy MacBook Air jest smuklejszy, lżejszy i ma olśniewający wyświetlacz Retina, Touch ID, klawiaturę najnowszej generacji oraz gładzik Force Touch. Jego legendarna konstrukcja w kształcie klina jest wykonana z aluminium pochodzącego w 100 procentach z recyklingu, co czyni go najbardziej ekologicznym ze wszystkich Maców1. A dzięki wydajnej baterii może pracować cały dzień bez doładowywania. Krótko mówiąc, MacBook Air to doskonały ultraprzenośny notebook do wszystkiego.",
+        "priceFrom": 5999,
+        "image": "http://localhost:5000/macbook-air-retina.png",
+        "new": true,
+        "chosen": false,
+        "features": [
+            {
+                "code": "processor",
+                "name": "Procesor",
+                "options": [
+                    {
+                        "code": "i5-16",
+                        "name": "i5 1.6 GHz 8 generacji",
+                        "price": 0
+                    }
+                ]
+            },
+            {
+                "code": "memory",
+                "name": "Pamięć RAM",
+                "options": [
+                    {
+                        "code": "ram-8",
+                        "name": "8GB RAM",
+                        "price": 0
+                    },
+                    {
+                        "code": "ram-16",
+                        "name": "16GB RAM",
+                        "price": 960
+                    }
+                ]
+            },
+            {
+                "code": "drive",
+                "name": "Dysk twardy",
+                "options": [
+                    {
+                        "code": "ssd-128",
+                        "name": "128GB SSD",
+                        "price": 0
+                    },
+                    {
+                        "code": "ssd-256",
+                        "name": "256GB SSD",
+                        "price": 1000
+                    },
+                    {
+                        "code": "ssd-512",
+                        "name": "512GB SSD",
+                        "price": 2000
+                    },
+                    {
+                        "code": "ssd-1500",
+                        "name": "1,5TB SSD",
+                        "price": 6000
+                    }
+                ]
+            },
+            {
+                "code": "Screen",
+                "name": "Ekran",
+                "options": [
+                    {
+                        "code": "retina-13",
+                        "name": "Retina 13\"",
+                        "price": 0
+                    }
+                ]
+            }
+        ]
+    },    {
+        "id": 9,
+        "name": "13\" calowy MackBook Air",
+        "description": "Najpopular­niejszy Mac kolejny raz zawróci Ci w głowie. Dostępny w kolorze srebrnym, gwiezdnej szarości i złotym, nowy MacBook Air jest smuklejszy, lżejszy i ma olśniewający wyświetlacz Retina, Touch ID, klawiaturę najnowszej generacji oraz gładzik Force Touch. Jego legendarna konstrukcja w kształcie klina jest wykonana z aluminium pochodzącego w 100 procentach z recyklingu, co czyni go najbardziej ekologicznym ze wszystkich Maców1. A dzięki wydajnej baterii może pracować cały dzień bez doładowywania. Krótko mówiąc, MacBook Air to doskonały ultraprzenośny notebook do wszystkiego.",
+        "priceFrom": 5999,
+        "image": "http://localhost:5000/macbook-air-retina.png",
+        "new": true,
+        "chosen": false,
+        "features": [
+            {
+                "code": "processor",
+                "name": "Procesor",
+                "options": [
+                    {
+                        "code": "i5-16",
+                        "name": "i5 1.6 GHz 8 generacji",
+                        "price": 0
+                    }
+                ]
+            },
+            {
+                "code": "memory",
+                "name": "Pamięć RAM",
+                "options": [
+                    {
+                        "code": "ram-8",
+                        "name": "8GB RAM",
+                        "price": 0
+                    },
+                    {
+                        "code": "ram-16",
+                        "name": "16GB RAM",
+                        "price": 960
+                    }
+                ]
+            },
+            {
+                "code": "drive",
+                "name": "Dysk twardy",
+                "options": [
+                    {
+                        "code": "ssd-128",
+                        "name": "128GB SSD",
+                        "price": 0
+                    },
+                    {
+                        "code": "ssd-256",
+                        "name": "256GB SSD",
+                        "price": 1000
+                    },
+                    {
+                        "code": "ssd-512",
+                        "name": "512GB SSD",
+                        "price": 2000
+                    },
+                    {
+                        "code": "ssd-1500",
+                        "name": "1,5TB SSD",
+                        "price": 6000
+                    }
+                ]
+            },
+            {
+                "code": "Screen",
+                "name": "Ekran",
+                "options": [
+                    {
+                        "code": "retina-13",
+                        "name": "Retina 13\"",
+                        "price": 0
                     }
                 ]
             }
