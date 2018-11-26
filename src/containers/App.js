@@ -1,7 +1,7 @@
-import React from 'react';
-import axios from 'axios';
-import styles from './App.module.sass';
-import Product from '../components/Product/Product';
+import React from 'react'
+import axios from 'axios'
+import styles from './App.module.sass'
+import ProductList from '../components/ProductsList/ProductsList'
 
 class App extends React.Component {
   constructor() {
@@ -19,7 +19,7 @@ class App extends React.Component {
       try {
           const res = await axios(`/products`)
           this.setState({products: res.data});
-          console.log(this.state.products);
+          // console.log(this.state.products[0].name);
       } catch (error) {
           console.log(error);
       }
@@ -28,8 +28,11 @@ class App extends React.Component {
   render() {
     return (
       <div className={styles.App}>
-        <h1>Witam w konfiguratorze!</h1>
-        <Product />
+        <div className={styles.products}>
+          <ProductList
+          products={this.state.products}
+          />
+        </div>
       </div>
       
     );
