@@ -1,0 +1,33 @@
+.newProduct
+    min-height: 33px
+    margin: 20px 0
+    span
+        padding: 5px
+        border: 1px solid orange
+        display: inline-block
+        
+.products
+    &__itemWrapper
+        width: 33.33333%
+        float: left
+        padding: 5px
+        box-sizing: border-box
+        border: 1px solid transparent
+        .products__item
+            border: 1px solid transparent
+            padding: 15px
+            cursor: pointer
+            background: #eee
+            border-radius: 10px
+            &.compared
+                cursor: auto
+    &__imgWrapper
+        min-height: 140px
+        display: flex
+        align-items: flex-end
+        justify-content: center
+        img
+            max-width: 100%
+.chosen
+    .products__item
+        border: 1px solid red
