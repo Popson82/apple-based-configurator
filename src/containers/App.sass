@@ -1,0 +1,116 @@
+.app
+  text-align: center
+  width: 980px
+  margin-left: auto
+  margin-right: auto
+h1
+    margin: 1rem 0 1rem 0
+h2
+    margin: 0 0 1rem 0
+p
+  margin: 0 0 1rem 0
+
+button
+    display: block
+    margin: 0 auto 1rem auto
+    cursor: pointer
+    &.btnPrimary
+        line-height: 1.47059
+        font-weight: 400
+        letter-spacing: -.022em
+        background-color: #0070c9
+        background: linear-gradient(#42a1ec,#0070c9)
+        border-color: #07c
+        border-width: 1px
+        border-style: solid
+        border-radius: 4px
+        color: white
+        cursor: pointer
+        min-width: 30px
+        padding-left: 15px
+        padding-right: 15px
+        padding-top: 4px
+        padding-bottom: 4px
+        text-align: center
+        white-space: nowrap
+        &:hover
+            background-color: #147bcd
+            background: linear-gradient(#51a9ee,#147bcd)
+            border-color: #1482d0
+            text-decoration: none
+    &.linkButton
+        color: #0070c9
+        text-decoration: none
+        margin-bottom: 1rem
+        display: block
+        background: transparent
+        border: 0
+        &:focus
+            outline: 0
+        &:hover
+            text-decoration: underline
+
+.newProduct
+    min-height: 33px
+    margin: 20px 0
+    span
+        padding: 5px
+        border: 1px solid orange
+        display: inline-block
+
+.comparePara
+    min-height: 29px
+    display: flex
+    justify-content: center
+    align-items: center
+.borderBottom
+    border-bottom: 1px solid #d6d6d6
+    padding-bottom: 5px
+.products
+    overflow-y: auto
+    .allProducts
+        overflow: auto
+        .products__itemWrapper
+            width: 33.33333%
+            padding: 5px
+            &.chosen
+                .products__item
+                    border: 1px solid #0070c9
+            .products__item
+                background: #eee
+                border-radius: 10px
+                border: 1px solid transparent
+                padding: 15px
+                cursor: pointer
+    .comparedProducts
+        overflow: auto
+        .products__itemWrapper
+            width: 50%
+    .productConfigurator
+        &__image, &__features
+            width: 50%
+            float: left
+    .moreAboutProducts
+        overflow: auto
+        text-align: left
+        &__item
+            width: 50%
+            float: left
+            box-sizing: border-box
+            &:nth-child(even)
+                padding-right: 15px
+            &:nth-child(odd)
+                padding-left: 15px
+    &__itemWrapper
+        float: left
+        box-sizing: border-box
+        border: 1px solid transparent
+        .products__item
+            &.compared
+    &__imgWrapper
+        min-height: 140px
+        display: flex
+        align-items: flex-end
+        justify-content: center
+        img
+            max-width: 100%

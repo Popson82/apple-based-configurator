@@ -1,11 +1,13 @@
 import React from 'react'
-import Product from '../Product/Product'
+import Product from '../ProductsList/Product/Product'
 
-const ComparedProducts = (props) => {
+
+const ProductConfigurator = (props) => {
     return (
-        <div className="comparedProducts">
+        <div className="productConfigurator">
             {props.products.map(product => {
-                if (product.chosen === true) {
+                console.log(product.configure)
+                if (product.configure === true) {
                     return (
                         <Product
                             key={product.id}
@@ -14,7 +16,7 @@ const ComparedProducts = (props) => {
                             img={product.image}
                             priceFrom={product.priceFrom}
                             new={product.new}
-                            renderComparedProducts={props.renderComparedProducts}
+                            renderProductConfigurator={props.renderProductConfigurator}
                         />
                     )
                 } else {
@@ -23,6 +25,6 @@ const ComparedProducts = (props) => {
             })}
         </div>
     )
-}
+};
 
-export default ComparedProducts;
+export default ProductConfigurator;

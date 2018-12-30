@@ -1,19 +1,27 @@
 import React from 'react'
 import Product from '../Product/Product'
 
-const allProducts = (props) => props.products.map(product => {
+const AllProducts = (props) => {
     return (
-        <Product
-            key={product.id}
-            id={product.id}
-            name={product.name}
-            img={product.image}
-            priceFrom={product.priceFrom}
-            new={product.new}
-            chosen={product.chosen}
-            toogleChosen={props.toogleChosen}
-        />
+        <div className="allProducts">
+            {props.products.map(product => {
+                return (
+                    <Product
+                        key={product.id}
+                        id={product.id}
+                        name={product.name}
+                        img={product.image}
+                        priceFrom={product.priceFrom}
+                        new={product.new}
+                        chosen={product.chosen}
+                        toogleChosen={props.toogleChosen}
+                        handleProductConfigurator={props.handleProductConfigurator}
+                        renderAllProducts={props.renderAllProducts}
+                    />
+                )
+            })}
+        </div>
     )
-})
+}
 
-export default allProducts;
+export default AllProducts;

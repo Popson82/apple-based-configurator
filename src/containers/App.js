@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
-import styles from './App.module.sass'
 import ProductList from '../components/ProductsList/ProductsList'
+import './App.sass'
 
 class App extends React.Component {
   constructor() {
@@ -27,8 +27,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className={styles.App}>
-        <div className={styles.products}>
+      <div className="app">
+        <div className="products">
           <ProductList
           products={this.state.products}
           />

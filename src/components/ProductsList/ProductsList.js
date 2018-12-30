@@ -1,16 +1,18 @@
 import React from 'react'
-import styles from './ProductsList.module.sass'
 import ComparedProducts from './ComparedProducts/ComparedProducts'
 import AllProducts from './AllProducts/AllProducts'
+import MoreAboutProducts from '../ProductsList/MoreAboutProducts/MoreAboutProducts'
+import CompareText from '../CompareText/CompareText'
+import ProductConfigurator from '../ProductConfigurator/ProductConfigurator';
 
 class ProductsList extends React.Component {
     constructor() {
         super();
         this.state = {
             itemsChosen: 0,
-            rednderComparedProducts: false,
-            rednderAllProducts: true,
-            comparingProducts: false
+            renderComparedProducts: false,
+            renderAllProducts: true,
+            renderProductConfigurator: false
         }
     }
     incrementChosenItems = () => {
@@ -23,15 +25,23 @@ class ProductsList extends React.Component {
             itemsChosen: this.state.itemsChosen - 1
         })
     }
-    toogleChosen = (productId) => {
-
+    resetChosenItems = () => {
+        this.setState({
+            itemsChosen: 0,
+            renderComparedProducts: false,
+            renderAllProducts: true,
+        })
         let products = [...this.props.products]
-
+        products.map(product => product.chosen = false)
+    }
+    toogleChosen = (productId) => {
+        let products = [...this.props.products]
         products.map(product => {
-
             if (product.id === productId) {
                 if (product.chosen === false && this.state.itemsChosen < 2) {
                     product.chosen = true
+                    // product.configure = true
+                    // // product
                     this.incrementChosenItems()
                     
                 } else if (product.chosen === true) {
@@ -39,49 +49,46 @@ class ProductsList extends React.Component {
                     this.decrementChosenItems()
                 }
             }
-
+            return false
         })
     }
-    handleProducts = () => {
-        if (this.state.itemsChosen === 2) {
+    handleProductsCompare = () => {
+        if (this.state.itemsChosen === 2 && this.state.renderComparedProducts === false) {
             this.setState({
-                rednderComparedProducts: true,
-                rednderAllProducts: false,
-                comparingProducts: true
+                renderComparedProducts: true,
+                renderAllProducts: false
             })
-        } else {
-
+        } else if (this.state.itemsChosen === 2 && this.state.renderComparedProducts === true) {
+            this.resetChosenItems()
         }
+    }
+
+    handleProductConfigurator = (productId) => {
+        this.setState({
+            renderComparedProducts: false,
+            renderAllProducts: false,
+            renderProductConfigurator: true
+        }, () => console.log(this.state))
+        let products = [...this.props.products]
+        products.map(product => {
+            if (product.id === productId) {
+                product.configure = true
+                console.log(product.configure)
+                // console.log(this.state)
+            }
+            return false
+        })
 
     }
 
     render () {
-        let compareText = ''
-        if (this.state.itemsChosen === 0) {
-            compareText = <p>Wybierz dwa modele i zobacz bardziej szczegółowe porównanie</p>
-            // return <p>{compareText}</p>
-        } else if (this.state.itemsChosen === 1) {
-            compareText = <p>Wybierz kolejny model do porównania</p>
-            // return <p>{compareText}</p>
-        } else if (this.state.itemsChosen === 2) {
-            compareText = <button className={styles.button} onClick={this.handleProducts}>Porównaj modele</button>
-        }
-
         return (
             <div>
-                <h1>Porównaj modele Maców</h1>
-                {/* {this.compareTextBasedOnItemsChosen} */}
-                {/* {console.log(this.compareTextBasedOnItemsChosen)} */}
-                {compareText}
-                {this.state.rednderAllProducts ? <AllProducts
-                    products={this.props.products}
-                    toogleChosen={this.toogleChosen}
-                /> : null}
-                {this.state.rednderComparedProducts ? <ComparedProducts
-                    products={this.props.products}
-                    toogleChosen={this.toogleChosen}
-                    comparingProducts={this.state.comparingProducts}
-                /> : null}
+                {this.state.renderAllProducts || this.state.renderComparedProducts ? <CompareText itemsChosen={this.state.itemsChosen} renderComparedProducts={this.state.renderComparedProducts} handleProductsCompare={this.handleProductsCompare} /> : null }
+                {this.state.renderAllProducts ? <AllProducts products={this.props.products} toogleChosen={this.toogleChosen} handleProductConfigurator={this.handleProductConfigurator} renderAllProducts={this.state.renderAllProducts} /> : null}
+                {this.state.renderComparedProducts ? <ComparedProducts products={this.props.products} renderComparedProducts={this.state.renderComparedProducts} /> : null}
+                {this.state.renderComparedProducts ? <MoreAboutProducts products={this.props.products} /> : null}
+                {this.state.renderProductConfigurator ? <ProductConfigurator products={this.props.products} renderProductConfigurator={this.state.renderProductConfigurator} /> : null}
             </div>
         )
     }

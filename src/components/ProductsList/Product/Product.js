@@ -1,48 +1,80 @@
 import React from 'react'
-import styles from './Product.module.sass'
 
 class Product extends React.Component {
-    constructor() {
-        super();
-    }
 
     ifNew = () => {
         if (this.props.new) {
             return <span>Nowość</span>
         }
     }
-    handleClick = () => {
-        if (this.props.comparingProducts !== true) this.props.toogleChosen(this.props.id)
+    compareClick = () => {
+        this.props.toogleChosen(this.props.id)
+    }
+    buyProduct = (event) => {
+        event.stopPropagation()
+        this.props.handleProductConfigurator(this.props.id)
+        // console.log("dupa")
+    }
+
+    allProducts = () => {
+        return (
+            <div className={["products__itemWrapper", this.props.chosen ? "chosen" : null].join(' ')} onClick={this.compareClick}>
+                <div className="products__item">
+                    <div className="products__imgWrapper">
+                        <img src={this.props.img} alt="" title=""/>
+                    </div>
+                    <p className="newProduct">{this.ifNew()}</p>
+                    <p>{this.props.name}</p>
+                    <p>od {this.props.priceFrom} zł</p>
+                    <button className="linkButton">{this.props.chosen ? "Wyłącz porównanie" : "Porównaj" }</button>
+                    <button className="btnPrimary" onClick={(event) => this.buyProduct(event)}>Kup teraz</button>
+                </div>
+            </div>
+        )
+    }
+    comparedProducts = () => {
+        return(
+            <div className="products__itemWrapper">
+                <div className="products__item compared">
+                    <div className="products__imgWrapper">
+                        <img src={this.props.img} alt="" title=""/>
+                    </div>
+                    <p className="newProduct">{this.ifNew()}</p>
+                    <p>{this.props.name}</p>
+                    <p>od {this.props.priceFrom} zł</p>
+                </div>
+            </div>
+        )
+    }
+    productConfigurator = () => {
+        return (
+            <>
+                <div className="productConfigurator__image">
+                    <div className="productConfigurator__imageWrapper">
+                        <img src={this.props.img} alt="" title=""/>
+                    </div>
+                </div>
+                <div className="productConfigurator__features">
+                    <h1>Skonfiguruj sobie {this.props.name}</h1>
+                </div>
+            </>
+        )
     }
 
     render() {
-        let itemWrapperClassName
-        if (this.props.comparingProducts !== true) {
-            itemWrapperClassName = [styles.products__itemWrapper, this.props.chosen ? styles.chosen : null].join(' ')
-        } else {
-            itemWrapperClassName = styles.products__itemWrapper
-        }
+        let renderBasedOnState
+        if (this.props.renderAllProducts) renderBasedOnState = this.allProducts()
+        if (this.props.renderComparedProducts) renderBasedOnState = this.comparedProducts()
+        if (this.props.renderProductConfigurator) renderBasedOnState = this.productConfigurator()
 
-        let itemClassName
-        if (this.props.comparingProducts !== true) {
-            itemClassName = styles.products__item
-        } else {
-            itemClassName = [styles.products__item, styles.compared].join(' ')
-        }
+        console.log(this.props.renderAllProducts)
+        console.log(this.props.renderComparedProducts)
+        console.log(this.props.renderProductConfigurator)
+        console.log(this.allProducts)
         
             
         return (
-            <div className={itemWrapperClassName} onClick={this.handleClick}>
-                <div className={itemClassName}>
-                    <div className={styles.products__imgWrapper}>
-                        <img src={this.props.img} alt="" title=""/>
-                    </div>
-                    <p className={styles.newProduct}>{this.ifNew()}</p>
-                    <p>{this.props.name}</p>
-                    <p>od {this.props.priceFrom} zł</p>
-                    <button>Wybierz</button>
-                </div>
-            </div>
+            renderBasedOnState
         )
     }
 };
